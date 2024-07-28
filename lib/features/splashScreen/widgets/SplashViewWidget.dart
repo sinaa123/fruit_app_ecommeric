@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_app/core/utils/SizeConfig.dart';
+import 'package:fruit_app/features/onBoardingScreen/presentation/OnBoardingScreen.dart';
+import 'package:get/get.dart';
 
 class SplashViewWidget extends StatefulWidget {
   const SplashViewWidget({super.key});
@@ -17,9 +20,15 @@ class _SplashViewWidgetState extends State<SplashViewWidget> with SingleTickerPr
     _animationController =AnimationController(vsync: this, duration: const Duration(milliseconds: 6000));
     fadeingAnimation = Tween<double>(begin: 0.2, end: 1).animate(_animationController!);
     _animationController!.repeat(reverse: true);
+    goToOnBoardingScreen();
   }
+  void goToOnBoardingScreen(){
+    Future.delayed(Duration(seconds: 5),(){
+      Get.to(()=>OnBoardingScreen(),transition:Transition.fade );
 
+    });
 
+  }
   @override
   void dispose() {
     super.dispose();
@@ -29,6 +38,7 @@ class _SplashViewWidgetState extends State<SplashViewWidget> with SingleTickerPr
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig.init(context);
     return Container(
       child: Column(
         children: [

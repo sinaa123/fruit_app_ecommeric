@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_app/core/widgets/constants.dart';
 import 'package:fruit_app/features/splashScreen/widgets/SplashViewWidget.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -6,7 +7,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF69A03A),
+      backgroundColor: kMainColor,
       body: SplashViewWidget(),
     );
   }

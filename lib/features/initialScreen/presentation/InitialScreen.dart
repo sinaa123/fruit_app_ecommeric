@@ -9,6 +9,9 @@ class InitialScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: 'Poppins-Regular'
+      ),
       home: SplashScreen(),
 
     ) ;
